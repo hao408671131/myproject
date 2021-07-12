@@ -1,0 +1,3 @@
+技术栈：vue+node.js+mongodb+vant
+li-shop是用vue开发的商城项目
+shopServe是用node.js搭建的服务器
