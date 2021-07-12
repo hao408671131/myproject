@@ -1,0 +1,205 @@
+{% extends "back/base.html"%}
+
+<!--新增的样式-会把下面style插槽的内容增加到base.html的style插槽中-->
+{% block style %}
+<style>
+
+  .preview {
+        width: 500px;
+        height: 90px;
+        padding: 0;
+        margin-left: 15px;
+        overflow: hidden;
+        position: relative;
+    }
+ .preview:hover .cover {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+  .preview:hover .fa-upload {
+        color: rgba(240, 240, 240, 0.8);
+    }
+  #upfile{
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 9;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+    }
+   .cover {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        line-height: 90px;
+        font-size: 40px;
+        background-color: rgba(0, 0, 0, 0);
+        transition: all 0.3s;
+    }
+   .fa-upload {
+        color: rgba(240, 240, 240, 0);
+    }
+</style>
+{% endblock %}
+
+<!--流出插槽，用来放置其他内容-->
+{% block content %}
+<div class="container-fluid">
+    <div class="body advert">
+        <!-- 面包屑 -->
+        <ol class="breadcrumb">
+            <li><a href="/back/s_list">轮播图管理</a></li>
+            <li class="active">修改轮播图</li>
+        </ol>
+        <div class="advert-add">
+            <form action="/back/sowing/api/edit" class="form-horizontal"method="post"enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="" class="col-md-3 control-label">图片名称</label>
+                    <div class="col-md-5">
+                        <input type="text"  name="image_title" class="form-control input-sm" placeholder="填写图片名称" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="" class="col-md-3 control-label">图片路径</label>
+                    <div class="col-md-2 preview">
+                        <img id="image" src="./images/default.png" style="border: 1px solid #e0e0e0;">
+                        <input type="file" id="upfile"name="image_url">
+                        <div class="cover">
+                            <i class="fa fa-upload"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="" class="col-md-3 control-label">跳转链接</label>
+                    <div class="col-md-5">
+                        <input type="text"name="image_link" class="form-control input-sm" placeholder="填写跳转链接"required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for=""class="col-md-3 control-label">上架时间</label>
+                    <div class="col-md-5">
+                        <input type="date"name="s_time"  class="form-control input-sm" placeholder="填写上架时间"required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="" class="col-md-3 control-label">下架时间</label>
+                    <div class="col-md-5">
+                        <input type="date" name="e_time"class="form-control input-sm" placeholder="填写下架时间"required>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-md-8">
+                       <input type="subm"id="sowing0" class="btn btn-danger btn-sm pull-right" value="修改轮播图">
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+<!--留个插槽-用来放置尾部引入-->
+{% block script %}
+<script>
+    $(function () {
+        //加载数据
+        loadData();
+
+
+
+    });
+    function loadData() {
+//截取id
+        let url=window.location.search,sowingId='';
+        if(url.indexOf('?')!==-1){//有?
+            sowingId=url.substr(url.indexOf('=')+1);//从=号的下一位开始截取字符串
+            //alert(sowingId);
+        }
+        //发起ajax请求
+        $.ajax({
+            url:'http://localhost:3020/back/sowing/api/singer/'+sowingId,
+            type:'get',
+            dataType:'json',
+            success:function (data) {
+                //注入数据
+                //console.log(data)
+                $('input:eq(0)').val(`${data.result.image_title}`);
+
+                $('input:eq(2)').val(`${data.result.image_link}`);
+                $('input:eq(3)').val(`${data.result.s_time}`);
+                $('input:eq(4)').val(`${data.result.e_time}`);
+                $('#image').attr("src",`/uploads/${data.result.image_url}`);
+
+                //上传图片处理
+                $('#upfile').on('change', () => {
+                    //获取用户上传的图片文件
+                    let file = $('#upfile').get(0).files[0];//在缓冲区获取上传的文件  get(0)表示节点的第一个属性，files表示上传的第一个文件
+                    //console.log(file);
+                    //读取这个文件
+
+                    let reader = new FileReader() //可取查FileReader文档,异步读取
+                    if (file) {
+                        reader.readAsDataURL(file);
+                        //监听文件是否读取完毕
+                        reader.onloadend = () => {//文件读取完毕之后会进入此函数
+                            $(' #image').attr('src',reader.result)    //整个过程是：从input缓冲区读取文件，读取过来之后将其赋给img的src
+
+                        }
+                    }
+
+
+                });
+                //提交表单
+                var sowing=document.getElementById('sowing0');
+                var upfile=document.getElementById('upfile');
+                sowing.onclick=function () {
+
+                    fdable=new FormData($('form')[0]);
+                    fdable.append('_id',sowingId);
+
+                    if(upfile.value===''){//如果没有更改图片，把原先的图片地址传过去
+                        fdable.set('image_url',data.result.image_url);
+                    }
+                    $.ajax({
+                        url:$('form').attr('action'),
+                        type:$('form').attr('method'),
+                        data:fdable,
+                        //防止将数据序列化成字符串
+                        processData:false,
+                        //不要设置请求头
+                        contentType:false,
+                         success:function (data) {//此处data是服务器接收到数据后res返回的数据，也就是res.json（）
+
+                             if(data.status===200){//修改成功
+                                 alert(data.result);
+                                 //回到原来的页面
+                                 window.location.href='/back/s_list';
+                             }else {
+                                 alert('轮播图修改失败！');
+                                 window.location.href='/back/s_list';
+                             }
+                         }
+                    });
+
+                    //阻止默认事件（提交表单）
+                    return false;
+                }
+
+            }
+
+
+
+        });
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,105 @@
+{% extends "back/base.html"%}
+
+<!--新增的样式-会把下面style插槽的内容增加到base.html的style插槽中-->
+{% block style %}
+
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid">
+    <!-- 修改密码 -->
+    <div class="body">
+        <div class="repass">
+            <form action="http://localhost:3020/back/user/api/reset"method="post" class="form-horizontal col-md-offset-2">
+                <div class="form-group">
+                    <label for="" class="col-md-3 control-label">原密码</label>
+                    <div class="col-md-4">
+                        <input  id="old_pwd" name="old_pwd" type="text" class="form-control input-sm"required placeholder="请输入原密码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="" class="col-md-3 control-label">新密码</label>
+                    <div class="col-md-4">
+                        <input id="new_pwd"name="new_pwd" type="password" class="form-control input-sm" required placeholder="请输入新密码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="" class="col-md-3 control-label">确认密码</label>
+                    <div class="col-md-4">
+                        <input id="re_pwd" name="re_pwd" type="password" class="form-control input-sm"required placeholder="请输入新密码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-7">
+                        <input id="form" type="submit" class="btn btn-success btn-danger  pull-right" value="修 改">
+
+                        <a href="/back/u_set"class="btn btn-success btn-warning pull-right"  style="margin-right: 10px;">返 回</a>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block script %}
+<script src="./js/md5.js"></script>
+<script>
+    $(function () {
+
+        $('#form').on('click',function(){
+            //获取用户输入的密码
+            let old_pwd=$('#old_pwd').val();
+            let new_pwd=$('#new_pwd').val();
+            let re_pwd=$('#re_pwd').val();
+
+            //做新旧密码对比
+
+            if(new_pwd!==re_pwd){
+                alert('两次输入的密码不一致');
+
+            }else{
+                //盐
+                const S_KEY='@WALK1314?.ItikE.Com.#'
+                let md5_old_pwd=md5(old_pwd+S_KEY);
+                let md5_new_pwd=md5(new_pwd+S_KEY);
+                let token=JSON.parse(localStorage.getItem('result')).token;
+                //console.log(token);
+                //发起post请求
+                $.ajax({
+                    url:$('form').attr('action'),
+                    type:$('form').attr('method'),
+                    data:`token=${token}&old_pwd=${md5_old_pwd}&new_pwd=${md5_new_pwd}`,
+                    success:function (data) {
+                        console.log(data);
+                        if(data.status===200){
+
+                            alert(data.result);
+                            //退出登录，重新登录
+                            $.get('http://localhost:3020/back/user/api/logout',function () {
+                                //删除本地数据，回到登录界面
+                                localStorage.removeItem('result');
+                                window.location.href='/back/login';
+                            })
+                        }
+                        else{
+                            alert('密码修改失败');
+                            window.location.href='/back/u_reset_pwd';
+                        }
+
+
+                    }
+                });
+                //取消默认事件
+                return false;
+            }
+
+        })
+    })
+</script>
+{% endblock %}
+
+

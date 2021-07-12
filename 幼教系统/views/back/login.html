@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>撩课-后台管理系统</title>
+    <link rel="shortcut icon" href="/back/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/back/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/back/node_modules/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="/back/node_modules/nprogress/nprogress.css">
+    <link rel="stylesheet" href="/back/css/index.css">
+</head>
+<body>
+    <!-- 登录 -->
+    <div class="login">
+        <div class="login-wrap">
+            <div class="avatar">
+                <img src="/back/uploads/logo.jpg" class="img-circle" alt="">
+            </div>
+            <form action="http://localhost:3020/user/api/login"method="post" class="col-md-offset-1 col-md-10">
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon">
+                        <i class="fa fa-id-card-o"></i>
+                    </span>
+                    <input type="text"id="user_name" name="user_name" class="form-control" placeholder="撩课口令"required>
+                </div>
+                <div class="input-group input-group-lg">
+                    <span class="input-group-addon">
+                        <i class="fa fa-key"></i>
+                    </span>
+                    <input type="password"id="user_pwd"  name="user_pwd"class="form-control" placeholder="密码"required>
+                </div>
+                <button type="button" class="btn btn-lg btn-danger btn-block btn-login">登 录</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="/back/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/back/node_modules/bootstrap/dist/js/bootstrap.js"></script>
+<script src="/back/js/md5.js"></script>
+    <script>
+        $(function () {
+            $('.btn-login').one('click',()=>{
+                //盐
+                const S_KEY='@WALK1314?.ItikE.Com.#'
+                //获取用户名和密码
+                let user_name=$('#user_name').val();
+                let user_pwd=$('#user_pwd').val();
+                let md5_user_pwd=md5(user_pwd+S_KEY);
+                //console.log(md5_user_pwd);
+
+                //发起ajax请求
+                let $form=$('form');
+                $.ajax({
+                    url:$form.attr('action'),
+                    type:$form.attr('method'),
+                    data:`user_name=${user_name}&user_pwd=${md5_user_pwd}`,
+                    success:function (data) {//此处data是服务器接收到数据后res返回的数据，也就是res.json（）
+                        //console.log(data);
+                        if(data.status===200){//登录成功
+                            //保存token到本地
+                            localStorage.setItem('result',JSON.stringify(data.result)) //整个浏览器都可以使用
+                            alert(data.result.message);
+                            //跳转到后端主界面
+                            window.location.href='/back';
+                        }else {//登录失败
+                            alert(data.result);
+                            //清空输入框
+                            $('#user_name').val('');
+                            $('#user_pwd').val('');
+
+                        }
+                    }
+                });
+
+            });
+
+            });
+
+    </script>
+</body>
+</html>
