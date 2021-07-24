@@ -31,7 +31,7 @@ export default function ajax(url='',params={},type='GET') {
                     if (paramsStr) {
                         paramsStr = paramsStr.substr(0, paramsStr.lastIndexOf('&'));
                         // 2.5 拼接完整路径
-                        if(url.indexOf('47.98.157.152') === -1) {
+                        if(url.indexOf('47.98.157.152') === -1) {//支付接口的地址，不需要时间戳
                             url += '?' + paramsStr + '&itlike=' + randomCode(20);
                         }else {
                             url += '?' + paramsStr;

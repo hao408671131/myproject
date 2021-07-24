@@ -80,13 +80,13 @@
                 //4.初始化滚动框架
                 this.$nextTick(()=>{//this.$nextTick()将回调延迟到下次 DOM 更新循环之后执行。在修改数据之后立即使用它，然后等待 DOM 更新。它跟全局方法 Vue.nextTick 一样，不同的是回调的 this 自动绑定到调用它的实例上。假设我们更改了某个dom元素内部的文本，而这时候我们想直接打印出这个被改变后的文本是需要dom更新之后才会实现的
                     this.leftScroll=new BScroll('.leftWrapper',
-                        this.leftScroll = new BScroll('.leftWrapper', {
+                        {
                         probeType: 3,
                         click: true,
                         scrollY: true,
                         tap: true,
                         mouseWheel: true
-                    }));
+                    });
                 });
             },
             //2.处理左边的点击操作
@@ -112,8 +112,6 @@
             ...mapState(['userInfo'])
         },
         mounted() {
-
-
 
         },
 

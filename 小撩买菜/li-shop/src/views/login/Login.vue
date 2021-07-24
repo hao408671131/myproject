@@ -5,7 +5,7 @@
             <!--面板头部-->
             <div class="login-header">
                 <div class="login-logo">
-                    <img src="./images/lk_logo_sm.png" alt="" width="300">
+                    <img src="./images/567.jpg" alt="" width="300">
                 </div>
                 <!--面板标题-->
                 <div class="login-header-title">
@@ -237,7 +237,7 @@
     .login-container .login-inner .login-header .login-logo {
         font-size: 40px;
         font-weight: bold;
-        color: #75a342;
+        color: darkblue;
         text-align: center
     }
 
@@ -248,7 +248,7 @@
     }
 
     .login-container .login-inner .login-header .login-header-title > a {
-        color: #333;
+        color: #0c5460;
         font-size: 14px;
         padding-bottom: 4px;
         text-decoration: none;
@@ -259,9 +259,9 @@
     }
 
     .login-container .login-inner .login-header .login-header-title > a.current {
-        color: #75a342;
+        color: blue;
         font-weight: 700;
-        border-bottom: 2px solid #75a342
+        border-bottom: 2px solid darkblue
     }
 
     .login-container .login-inner .login-content > form > div {
@@ -284,7 +284,7 @@
     }
 
     .login-container .login-inner .login-content > form > div input:focus {
-        border: 1px solid #75a342
+        border: 1px solid darkblue;
     }
 
     .login-container .login-inner .login-content > form > div .login-message {
@@ -307,7 +307,7 @@
     }
 
     .login-container .login-inner .login-content > form > div .login-message .get-verification.phone_right {
-        color: #75a342
+        color: #0c5460;
     }
 
     .login-container .login-inner .login-content > form > div .login-verification {
@@ -315,7 +315,7 @@
         margin-top: 16px;
         height: 48px;
         font-size: 14px;
-        background: #fff;
+        background: #0c5460;
     }
 
     .login-container .login-inner .login-content > form > div .login-verification .switch-show {
@@ -349,7 +349,7 @@
         height: 42px;
         margin-top: 30px;
         border-radius: 4px;
-        background: #75a342;
+        background: darkblue;
         color: #fff;
         text-align: center;
         font-size: 16px;
@@ -364,8 +364,8 @@
         margin-top: 15px;
         border-radius: 4px;
         background: transparent;
-        border: 1px solid #75a342;
-        color: #75a342;
+        border: 1px solid darkblue;
+        color: darkblue;
         text-align: center;
         font-size: 16px;
         line-height: 42px

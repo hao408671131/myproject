@@ -4,6 +4,7 @@
                 title="我的"
                 :fixed=true
                 :border=false
+
         />
 
         <van-cell-group style="margin-top: 2.6rem"@click="toUserCenter">
@@ -15,7 +16,7 @@
                 <!-- 使用 title 插槽来自定义标题 -->
                 <template slot="title">
                     <div class="personMsg">
-                        <img src="./images/detail1.jpg" alt="">
+                        <img src="./images/567.jpg" alt="">
                         <div class="personInfo">
                             <span>{{userInfo.real_name}}</span>
                             <span>手机号：{{userInfo.phone}}</span>

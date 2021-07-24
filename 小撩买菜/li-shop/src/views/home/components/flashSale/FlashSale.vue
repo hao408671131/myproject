@@ -1,7 +1,7 @@
 <template>
     <div class="flashWrapper">
         <div class="titleWrapper">
-            <div class="title">限时抢购</div>
+            <div class="title">VIP优惠场</div>
             <span class="actionStateText">07:00场</span>
             <div class="actionStateTextEnd">已结束</div>
             <span class="more">更多</span>

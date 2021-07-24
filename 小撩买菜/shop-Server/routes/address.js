@@ -241,7 +241,7 @@ router.get('/web/xlmc/api/homeApi', (req, res, next) => {
                             "public_id": "5d417cc54df3e3c4738de681",
                             "public_name": "七夕美食告白190801",
                             "meteria_id": "5d417c774df3e37d378de40a",
-                            "icon_url": "https://img.ddimg.mobi/94c44f8c4e9611564572820049.jpg",
+                            "icon_url": "http://localhost:3000/img/lunbotu1.jpg",
                             "link": {
                                 "type": 0,
                                 "data": {
@@ -255,7 +255,7 @@ router.get('/web/xlmc/api/homeApi', (req, res, next) => {
                             "public_id": "5d406f3c4ed5bdc23d8cf4ac",
                             "public_name": "嗨吃一夏鸡任选2件_轮播190803",
                             "meteria_id": "5d406eea4df3e3df3f8d0d93",
-                            "icon_url": "https://img.ddimg.mobi/d2c94e1f7d5381564503773709.jpg",
+                            "icon_url": "http://localhost:3000/img/lunbotu2.jpg",
                             "link": {
                                 "type": 0,
                                 "data": {
@@ -283,7 +283,7 @@ router.get('/web/xlmc/api/homeApi', (req, res, next) => {
                             "public_id": "5d3d4ccb4fb797997e8e73dd",
                             "public_name": "美食图鉴轮播7.28",
                             "meteria_id": "5d3d4c874df3e382488ef07c",
-                            "icon_url": "https://img.ddimg.mobi/7c2df4a57cb251564298372619.jpg",
+                            "icon_url": "http://localhost:3000/img/lunbotu3.jpg",
                             "link": {
                                 "type": 0,
                                 "data": {
@@ -297,7 +297,7 @@ router.get('/web/xlmc/api/homeApi', (req, res, next) => {
                             "public_id": "5d43f6b34ed5bd39548edcc9",
                             "public_name": "早餐轮播8.3",
                             "meteria_id": "5d3e58614ed5bd181e8f5f51",
-                            "icon_url": "https://img.ddimg.mobi/79d89da5e5a4b1564366938694.jpg",
+                            "icon_url": "http://localhost:3000/img/lunbotu4.jpg",
                             "link": {
                                 "type": 0,
                                 "data": {
@@ -340,7 +340,7 @@ router.get('/web/xlmc/api/homeApi', (req, res, next) => {
                     "background_image": "",
                     "icon_list": [
                         {
-                            "icon_url": "https://img.ddimg.mobi/faed0c89b1ac61561979943620.jpg",
+                            "icon_url": "http://localhost:3000/img/sucaifenlei1.jpg",
                             "link": {
                                 "type": 0,
                                 "data": {
@@ -355,7 +355,7 @@ router.get('/web/xlmc/api/homeApi', (req, res, next) => {
                             "is_pop_login": 0
                         },
                         {
-                            "icon_url": "https://img.ddimg.mobi/57742da7f00ab1562725189267.jpg",
+                            "icon_url": "http://localhost:3000/img/jidanfenlei1.jpg",
                             "link": {
                                 "type": 0,
                                 "data": {
@@ -370,7 +370,7 @@ router.get('/web/xlmc/api/homeApi', (req, res, next) => {
                             "is_pop_login": 0
                         },
                         {
-                            "icon_url": "https://img.ddimg.mobi/3f96191b097cd1562204510108.jpg",
+                            "icon_url": "http://localhost:3000/img/wuhuarou.jpg",
                             "link": {
                                 "type": 0,
                                 "data": {
@@ -385,7 +385,7 @@ router.get('/web/xlmc/api/homeApi', (req, res, next) => {
                             "is_pop_login": 0
                         },
                         {
-                            "icon_url": "https://img.ddimg.mobi/febc9219e5f061561980283162.jpg",
+                            "icon_url": "http://localhost:3000/img/shuiguo.jpg",
                             "link": {
                                 "type": 0,
                                 "data": {
@@ -400,7 +400,7 @@ router.get('/web/xlmc/api/homeApi', (req, res, next) => {
                             "is_pop_login": 0
                         },
                         {
-                            "icon_url": "https://img.ddimg.mobi/baf53e7d1e9ce1561980371874.jpg",
+                            "icon_url": "http://localhost:3000/img/rupin.jpg",
                             "link": {
                                 "type": 0,
                                 "data": {
@@ -415,7 +415,7 @@ router.get('/web/xlmc/api/homeApi', (req, res, next) => {
                             "is_pop_login": 0
                         },
                         {
-                            "icon_url": "https://img.ddimg.mobi/67260446df1451561980456552.jpg",
+                            "icon_url": "http://localhost:3000/img/mimianliangyou.jpg",
                             "link": {
                                 "type": 0,
                                 "data": {
@@ -430,7 +430,7 @@ router.get('/web/xlmc/api/homeApi', (req, res, next) => {
                             "is_pop_login": 0
                         },
                         {
-                            "icon_url": "https://img.ddimg.mobi/a79822f496ec71561980537120.jpg",
+                            "icon_url": "http://localhost:3000/img/fangbian.jpg",
                             "link": {
                                 "type": 0,
                                 "data": {
@@ -445,7 +445,7 @@ router.get('/web/xlmc/api/homeApi', (req, res, next) => {
                             "is_pop_login": 0
                         },
                         {
-                            "icon_url": "https://img.ddimg.mobi/17964fae5012d1561980650167.jpg",
+                            "icon_url": "http://localhost:3000/img/yinjiu.jpg",
                             "link": {
                                 "type": 0,
                                 "data": {
@@ -460,7 +460,7 @@ router.get('/web/xlmc/api/homeApi', (req, res, next) => {
                             "is_pop_login": 0
                         },
                         {
-                            "icon_url": "https://img.ddimg.mobi/cc39ecee3cee51564386403745.jpg",
+                            "icon_url": "http://localhost:3000/img/jiankang.jpg",
                             "link": {
                                 "type": 0,
                                 "data": {
@@ -468,14 +468,14 @@ router.get('/web/xlmc/api/homeApi', (req, res, next) => {
                                 }
                             },
                             "public_id": "5d3ea30e4fb797ff7d8f46df",
-                            "public_name": "宝宝餐 7.30",
+                            "public_name": "健康餐 7.30",
                             "cid": 1071,
                             "meteria_id": "5d3ea4654df3e3c6298b9360",
-                            "name": "宝宝餐",
+                            "name": "健康餐",
                             "is_pop_login": 0
                         },
                         {
-                            "icon_url": "https://img.ddimg.mobi/a19a8501bf4041561980956934.jpg",
+                            "icon_url": "http://localhost:3000/img/qingliang.jpg",
                             "link": {
                                 "type": 0,
                                 "data": {
@@ -486,7 +486,7 @@ router.get('/web/xlmc/api/homeApi', (req, res, next) => {
                             "public_name": "冰淇淋icon10_小程序",
                             "cid": 1072,
                             "meteria_id": "5d19f0204ed5bddd0d8b5f79",
-                            "name": "冰淇淋",
+                            "name": "清凉一夏",
                             "is_pop_login": 0
                         }
                     ]
@@ -510,13 +510,13 @@ router.get('/web/xlmc/api/homeApi', (req, res, next) => {
                     "product_list": [
                         {
                             "id": "5b72911c01a6eaaf048b5d79",
-                            "product_name": "爱森五花肉 500g",
-                            "name": "爱森五花肉 500g",
+                            "product_name": "金锣五花肉 500g",
+                            "name": "金锣五花肉 500g",
                             "origin_price": "46.90",
                             "price": "41.80",
                             "vip_price": "",
                             "spec": "高端五花肉 吃出幸福的滋味",
-                            "small_image": "https://img.ddimg.mobi/product/4513b9fc5935f1548406258985.jpg!deliver.product.list",
+                            "small_image": "http://localhost:3000/img/wuhuarou.jpg",
                             "category_id": "58fa1cc1936edfe6568b58c2",
                             "sizes": [],
                             "total_sales": 8790,
@@ -555,13 +555,13 @@ router.get('/web/xlmc/api/homeApi', (req, res, next) => {
                         },
                         {
                             "id": "5ceb7df410abf114be38505a",
-                            "product_name": "鲜活黄鳝2条 300g以上",
-                            "name": "鲜活黄鳝2条 300g以上",
+                            "product_name": "进口牛油果 中果6粒装 单果重130g起 生鲜水果",
+                            "name": "进口牛油果 单果重130g起",
                             "origin_price": "36.90",
                             "price": "31.90",
                             "vip_price": "",
-                            "spec": "肉质细腻有弹性（不提供切丝服务，请见谅）",
-                            "small_image": "https://img.ddimg.mobi/product/11c9a477691191555502515839.jpg!deliver.product.list",
+                            "spec": "生鲜水果 健康轻食",
+                            "small_image": "http://localhost:3000/img/niuyouguo.jpg",
                             "category_id": "58fa23d8916edf7e198b496a",
                             "sizes": [
                                 {
@@ -617,13 +617,13 @@ router.get('/web/xlmc/api/homeApi', (req, res, next) => {
                         },
                         {
                             "id": "5b150c9bc0a1ea13728b4576",
-                            "product_name": "粮全其美葱香味手抓饼 900g/袋",
-                            "name": "粮全其美葱香味手抓饼 900g/袋",
+                            "product_name": " 越南进口红心火龙果 3个装 红肉大果",
+                            "name": "越南进口红心火龙果 3个装 红肉大果",
                             "origin_price": "20.80",
                             "price": "18.80",
                             "vip_price": "",
-                            "spec": "金黄酥脆 黄金扑鼻",
-                            "small_image": "https://ddimg.ddxq.mobi/becc0e6b257781528108118451.jpg!maicai.product.list",
+                            "spec": "鲜嫩口感好 香气扑鼻",
+                            "small_image": "http://localhost:3000/img/huolongg.jpg",
                             "category_id": "5b0ffb3845cd42cb548c913c",
                             "sizes": [],
                             "total_sales": 8458,

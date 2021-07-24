@@ -1,10 +1,10 @@
 <template>
     <div class="select-login">
         <div class="bottom">
-            <img src="./images/lk_logo_sm.png" alt="" width="300">
+            <img src="./images/567.jpg" alt="" width="300"height="150px">
         </div>
         <h4>选择登录方式</h4>
-        <button @click="toLogin">手机登录</button>
+        <button @click="toLogin"  >手机登录</button>
     </div>
 </template>
 
@@ -38,12 +38,14 @@
     button{
         width: 80%;
         height: 38px;
-        background-color: #2eba5a;
+        background-color: darkblue;
         border: none;
         border-radius: 5px;
         font-size: 20px;
         color: #fff;
         margin-top: 30px;
+        text-align: center;
+        //background:url("./images/modao.jpg") no-repeat center center;
     }
     .bottom{
         position: fixed;
