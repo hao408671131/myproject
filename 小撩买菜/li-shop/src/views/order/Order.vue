@@ -29,7 +29,7 @@
                     <!-- 使用 title 插槽来自定义标题 -->
                     <template slot="title" >
                         <div style="display:flex;flex-wrap: nowrap;width: 9rem;overflow: hidden">
-                            <div v-for="(shopCart,index) in threeShopCart">
+                            <div v-for="(shopCart,index) in threeShopCart":key="shopCart.id">
                                 <img :src="shopCart.small_image" alt=""style="width: 3rem" >
                             </div>
                         </div>
